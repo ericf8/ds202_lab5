@@ -15,7 +15,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 df = read.table('diabetes.txt', header=TRUE)
 
+print(sum(is.na(df)))
+
 df[df==""]<-NA
+
+print(sum(is.na(df)))
 
 df = df.droplevels()
 
