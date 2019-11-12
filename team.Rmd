@@ -74,18 +74,43 @@ diabetes_clean %>% group_by(frame,location) %>% summarise (mean.glyhb_star= mean
 
 ```
 
-glyhb_star against ratio
+# glyhb_star against ratio
+```{r}
 
-glyhb_star against bp.1s
+ggplot(diabetes_clean, aes(glyhb_star, ratio, color = frame)) + geom_point() + labs(x= "Glyhb_Star", y="Ratio", title = "Relationship between glyhb_star and ratio")
 
-glyhb_star against age
+```
 
-glyhb_star against gender
+# glyhb_star against bp.1s
+```{r}
+ggplot(diabetes_clean, aes(glyhb_star, bp.1s, color = frame)) + geom_point() + labs(x= "Glyhb_Star", y="bp.1s", title = "Relationship between glyhb_star and bp.1s")
 
-glyhb_star against hip
 
-glyhb_star against weight
+```
+# glyhb_star against age
+```{r}
+ggplot(diabetes_clean, aes(glyhb_star, age, color = frame)) + geom_point() + labs(x= "Glyhb_Star", y="Age", title = "Relationship between glyhb_star and age")
 
+
+```
+# glyhb_star against gender
+```{r}
+
+ggplot(diabetes_clean, aes(gender, glyhb_star, color = frame)) + geom_boxplot() + labs(x= "Gender", y="Glyhb_Star", title = "Relationship between glyhb_star and gender")
+
+```
+# glyhb_star against hip
+```{r}
+ggplot(diabetes_clean, aes(glyhb_star, hip, color = frame)) + geom_point() + labs(x= "Glyhb_Star", y="Hip", title = "Relationship between glyhb_star and hip")
+
+
+```
+# glyhb_star against weight
+```{r}
+ggplot(diabetes_clean, aes(glyhb_star, weight, color = frame)) + geom_point() + labs(x= "Glyhb_Star", y="Weight", title = "Relationship between glyhb_star and weight")
+
+
+```
 
 
 
