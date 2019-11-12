@@ -42,9 +42,9 @@ print(sum(is.na(diabetes_clean)))
 ```{r}
 library(dplyr)
 
-ggplot(diabetes_clean, aes(x = glyhb)) + geom_histogram() # plotted a histogram of the variable glyhb to see the skewness
+ggplot(diabetes_clean, aes(x = glyhb)) + geom_histogram() + labs(title = "Distribution of Glycosolated Hemoglobin", x = "Glycosolated Hemoglobin", y = "Frequency") # plotted a histogram of the variable glyhb to see the skewness
 
-ggplot(diabetes_clean, aes(x = glyhb)) + geom_histogram() + xlim(2, 8) # set limits on the x axis to create a better looking distribution without the outliers greater than 8
+ggplot(diabetes_clean, aes(x = glyhb)) + geom_histogram() + xlim(2, 8) + labs(title = "Distribution of Glycosolated Hemoglobin", x = "Glycosolated Hemoglobin", y = "Frequency") # set limits on the x axis to create a better looking distribution without the outliers greater than 8
 
 diabetes_clean$glyhb[diabetes_clean$glyhb > 8] <- NA # applies NA to any glyhb being greater than 8 
 
@@ -52,7 +52,7 @@ diabetes_clean = na.omit(diabetes_clean) # dropped those new 44 rows
 
 names(diabetes_clean)[names(diabetes_clean) == 'glyhb'] <- 'glyhb_star' # renamed that column to be glyhb_star
 
-ggplot(diabetes_clean, aes(x = glyhb_star)) + geom_histogram()
+ggplot(diabetes_clean, aes(x = glyhb_star)) + geom_histogram() + labs(title = "Distribution of Glycosolated Hemoglobin", x = "Glycosolated Hemoglobin", y = "Frequency")
 ```
 
 Summary Statistics of glyhb_star
@@ -77,37 +77,37 @@ diabetes_clean %>% group_by(frame,location) %>% summarise (mean.glyhb_star= mean
 # glyhb_star against ratio
 ```{r}
 
-ggplot(diabetes_clean, aes(glyhb_star, ratio, color = frame)) + geom_point() + labs(x= "Glyhb_Star", y="Ratio", title = "Relationship between glyhb_star and ratio")
+ggplot(diabetes_clean, aes(glyhb_star, ratio, color = frame)) + geom_point() + labs(x= "Glycosolated Hemoglobin", y="Ratio", title = "Relationship between Glycosolated Hemoglobin and ratio")
 
 ```
 
 # glyhb_star against bp.1s
 ```{r}
-ggplot(diabetes_clean, aes(glyhb_star, bp.1s, color = frame)) + geom_point() + labs(x= "Glyhb_Star", y="bp.1s", title = "Relationship between glyhb_star and bp.1s")
+ggplot(diabetes_clean, aes(glyhb_star, bp.1s, color = frame)) + geom_point() + labs(x= "Glycosolated Hemoglobin", y="bp.1s", title = "Relationship between Glycosolated Hemoglobin and bp.1s")
 
 
 ```
 # glyhb_star against age
 ```{r}
-ggplot(diabetes_clean, aes(glyhb_star, age, color = frame)) + geom_point() + labs(x= "Glyhb_Star", y="Age", title = "Relationship between glyhb_star and age")
+ggplot(diabetes_clean, aes(glyhb_star, age, color = frame)) + geom_point() + labs(x= "Glycosolated Hemoglobin", y="Age", title = "Relationship between Glycosolated Hemoglobin and age")
 
 
 ```
 # glyhb_star against gender
 ```{r}
 
-ggplot(diabetes_clean, aes(gender, glyhb_star, color = frame)) + geom_boxplot() + labs(x= "Gender", y="Glyhb_Star", title = "Relationship between glyhb_star and gender")
+ggplot(diabetes_clean, aes(gender, glyhb_star, color = frame)) + geom_boxplot() + labs(x= "Gender", y="Glycosolated Hemoglobin", title = "Relationship between Glycosolated Hemoglobin and gender")
 
 ```
 # glyhb_star against hip
 ```{r}
-ggplot(diabetes_clean, aes(glyhb_star, hip, color = frame)) + geom_point() + labs(x= "Glyhb_Star", y="Hip", title = "Relationship between glyhb_star and hip")
+ggplot(diabetes_clean, aes(glyhb_star, hip, color = frame)) + geom_point() + labs(x= "Glycosolated Hemoglobin", y="Hip", title = "Relationship between Glycosolated Hemoglobin and hip")
 
 
 ```
 # glyhb_star against weight
 ```{r}
-ggplot(diabetes_clean, aes(glyhb_star, weight, color = frame)) + geom_point() + labs(x= "Glyhb_Star", y="Weight", title = "Relationship between glyhb_star and weight")
+ggplot(diabetes_clean, aes(glyhb_star, weight, color = frame)) + geom_point() + labs(x= "Glycosolated Hemoglobin", y="Weight", title = "Relationship between Glycosolated Hemoglobin and weight")
 
 
 ```
