@@ -70,10 +70,21 @@ diabetes_clean %>% group_by(frame)%>% summarise(mean(glyhb_star)) # looking at t
 ```{r}
 library(ggplot2)
 
-
-
+diabetes_clean %>% group_by(frame,location) %>% summarise (mean.glyhb_star= mean(glyhb_star)) 
 
 ```
+
+glyhb_star against ratio
+
+glyhb_star against bp.1s
+
+glyhb_star against age
+
+glyhb_star against gender
+
+glyhb_star against hip
+
+glyhb_star against weight
 
 
 
