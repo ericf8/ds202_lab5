@@ -29,8 +29,43 @@ index.na=apply(is.na(diabetes_reduced), 1, any) # used to identify rows with mis
 diabetes_clean<- na.omit(diabetes_reduced) #na.omit drops all rows with any NA Values
 
 ```
-The way that we check if step four was done correctly, we used sum and is.na to see the number of rows with NA values, as seen below.
+5. The way that we check if step four was done correctly, we used sum and is.na to see the number of rows with NA values, as seen below.
 ```{r}
 print(sum(is.na(diabetes_clean)))
 
 ```
+
+## Exploring and Transforming data
+
+6. You can fix the right skewness of glyhb by setting the x limits of the plot using + xlim(), the downside of using this is we ignore outliers that lie to the right of the distribution thus removing 44 rows.
+
+```{r}
+library(dplyr)
+
+ggplot(diabetes_clean, aes(x = glyhb)) + geom_histogram() # plotted a histogram of the variable glyhb to see the skewness
+
+ggplot(diabetes_clean, aes(x = glyhb)) + geom_histogram() + xlim(2, 8) # set limits on the x axis to create a better looking distribution without the outliers greater than 8
+
+diabetes_clean$glyhb[diabetes_clean$glyhb > 8] <- NA # applies NA to any glyhb being greater than 8 
+
+diabetes_clean = na.omit(diabetes_clean) # dropped those new 44 rows 
+
+names(diabetes_clean)[names(diabetes_clean) == 'glyhb'] <- 'glyhb_star' # renamed that column to be glyhb_star
+
+ggplot(diabetes_clean, aes(x = glyhb_star)) + geom_histogram()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
