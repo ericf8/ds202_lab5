@@ -55,7 +55,25 @@ names(diabetes_clean)[names(diabetes_clean) == 'glyhb'] <- 'glyhb_star' # rename
 ggplot(diabetes_clean, aes(x = glyhb_star)) + geom_histogram()
 ```
 
+Summary Statistics of glyhb_star
 
+```{r}
+
+summary(diabetes_clean$glyhb_star) #summary of the variable glyhb_star
+
+diabetes_clean %>% group_by(frame)%>% summarise(mean(glyhb_star)) # looking at the mean values of glyhb_star by the frames (small medium and large)
+
+```
+
+## Visualizations
+
+```{r}
+library(ggplot2)
+
+
+
+
+```
 
 
 
