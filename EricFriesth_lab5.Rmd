@@ -12,15 +12,25 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Processing the data
 
 ```{r}
-
+library(tidyverse)
 df = read.table('diabetes.txt', header=TRUE)
 
-print(sum(is.na(df)))
+df[df==""]<-NA #replacing empty strings with NA's
 
-df[df==""]<-NA
+df = droplevels(df) #using droplevels as specified in the spec
 
-print(sum(is.na(df)))
 
-df = df.droplevels()
+removed_cols <- c("id","bp.2s", "bp.2d")
+diabetes_reduced <- df %>% select(-removed_cols) #dropping the id, bp.2s, and bp.2d columns
+#view(diabetes_reduced)
+
+index.na=apply(is.na(diabetes_reduced), 1, any) # used to identify rows with missing value.
+
+diabetes_clean<- na.omit(diabetes_reduced) #na.omit drops all rows with any NA Values
+
+```
+The way that we check if step four was done correctly, we used sum and is.na to see the number of rows with NA values, as seen below.
+```{r}
+print(sum(is.na(diabetes_clean)))
 
 ```
