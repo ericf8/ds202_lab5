@@ -135,7 +135,14 @@ summary(fit)
 
 ```
 
-
+15. Judging from the results of our model, we an see that the mean value of the glycosolated hemoglobin (abbreviated to GH from this point forward) is 2.62 approximately, meaning that the level of GH is 2.62 when the stabilized glucose, age, waist, medium frame, small frame, and ratio values are equal to 0. The 0.0079 estimate value for stabilized glucose shows that when the value of the stabilized glucose level increases by a measure of 1, the mean GH level will increase by 0.079%. Similarly, the estimates of 0.013, 0.018, 0.089, -0.147, and -0.276 for age, waist, ratio, medium frame, and small frame respectively goes to show the varying changes of the mean value of GH based on those predictors respectively, while keeping every other predictor constant. Changes in the mean value of GH as per each predictor are as follows:
+  - 1.3% from an increase of 1 in age, with all other predictors being constant
+  - 1.8% from an increase of 1 in waist, with all other predictors being constant
+  - 8.9% from an increase of 1 in ratio, with all other predictors being constant
+  - (-14.75)% from an increase of 1 in medium frame, with all other predictors being constant
+  - (-27.64)% from an increase of 1 in small frame, with all other predictors being constant
+  
+  With regard to the adjusted R squared, the value that tells us how much the change in our response variable is explained by the predictors by measuring the proportion of variability in the response that can be explained using the predictors, and the F-statistic , the value that checks the existence of some sort of relationship (linear or logistic, in this case linear) be between the response and predictor variables, we see that the adjusted R squared value is a bit too low to show any correlation between the GH and predictors that we used in the model.
 
 
 
