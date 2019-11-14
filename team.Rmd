@@ -170,7 +170,20 @@ increase of 1 unit in a predictor while all others remain constant (explained be
   - (-27.64)% from an increase of 1 in small frame, with all other predictors being constant
 
 
+17. We can interpet the y hat value as the predicted value of y, our response variable, in a regression equation. Running the following code block shows the predicted y-values:
 
+```{r}
+view(fit$fitted.values)
+```
+These estimated fitted values are the estimates of the true values of glyhb_star, glycosolated hemoglobin levels. Now, using the fitted model to predict our y hat value when stab.glu = 90, age = 35, waist = 30, ratio = 5.1, and frame = small, we would end up plugging these numbers into the model to get something as such
+  
+  - y_hat = 2.63230 + (90).007921 + (35).013023 + (30).018357 + (5.1).089187 + (-0.276407) => 4.5301517
+  
+  This falls in line with glyhb_star values of records who have their frames equal to small, and shows that the fitted model might be better at predicting those who have smaller frames than those who don't.
+  
+18. Question 17 was a perfect example of showing the differences between predictions and inferences. Above, we predicted the glyhb_star values of a person with the following values, stab.glu = 90, age = 35, waist = 30, ratio = 5.1, and frame = small. Based on our model, we predicted that this particular person would have a glyhb_star value of 4.5301517. The lines that we wrote underneath our predicted value of glyhb_star was information that we inferred based on the prediction, which goes to show the difference between predictions and inferences. 
+  
+  
 
 
 
