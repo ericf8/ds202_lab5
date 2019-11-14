@@ -29,7 +29,8 @@ index.na=apply(is.na(diabetes_reduced), 1, any) # used to identify rows with mis
 diabetes_clean<- na.omit(diabetes_reduced) #na.omit drops all rows with any NA Values
 
 ```
-5. The way that we check if step four was done correctly, we used sum and is.na to see the number of rows with NA values, as seen below.
+5. The way that we check if step four was done correctly, we used sum and is.na to see the
+number of rows with NA values, as seen below.
 ```{r}
 print(sum(is.na(diabetes_clean)))
 
@@ -37,7 +38,9 @@ print(sum(is.na(diabetes_clean)))
 
 ## Exploring and Transforming data
 
-6. You can fix the right skewness of glyhb by setting the x limits of the plot using + xlim(), the downside of using this is we ignore outliers that lie to the right of the distribution thus removing 44 rows.
+6. You can fix the right skewness of glyhb by setting the x limits of the plot using + xlim(),
+the downside of using this is we ignore outliers that lie to the right of the distribution
+thus removing 44 rows.
 
 ```{r}
 library(dplyr)
@@ -112,7 +115,25 @@ ggplot(diabetes_clean, aes(glyhb_star, weight, color = frame)) + geom_point() + 
 
 ```
 
+## Messy Data
 
+13. The function gather() is used to make tables more narrow in width and longer in length
+while the function spread() is used to do the opposite with a dataset, make it longer in width
+and shorter in length. More specifically, these functions are used to reformat the dataset to
+view it in a different way (stacking).
+
+14. These functions are related in that they both reformat your data to make it more readable.
+They complement each other on the common Key and Value. 
+
+## Regression Models
+
+```{r}
+
+fit = lm(glyhb_star ~stab.glu + age + waist + ratio+ factor(frame),data=diabetes_clean)
+
+summary(fit)
+
+```
 
 
 
