@@ -170,20 +170,55 @@ increase of 1 unit in a predictor while all others remain constant (explained be
   - (-27.64)% from an increase of 1 in small frame, with all other predictors being constant
 
 
-17. We can interpet the y hat value as the predicted value of y, our response variable, in a regression equation. Running the following code block shows the predicted y-values:
+17. We can interpet the y hat value as the predicted value of y, our response variable, in a
+regression equation. Running the following code block shows the predicted y-values:
 
 ```{r}
 view(fit$fitted.values)
 ```
-These estimated fitted values are the estimates of the true values of glyhb_star, glycosolated hemoglobin levels. Now, using the fitted model to predict our y hat value when stab.glu = 90, age = 35, waist = 30, ratio = 5.1, and frame = small, we would end up plugging these numbers into the model to get something as such
+These estimated fitted values are the estimates of the true values of glyhb_star, glycosolated
+hemoglobin levels. Now, using the fitted model to predict our y hat value when stab.glu = 90,
+age = 35, waist = 30, ratio = 5.1, and frame = small, we would end up plugging these numbers
+into the model to get something as such
   
   - y_hat = 2.63230 + (90).007921 + (35).013023 + (30).018357 + (5.1).089187 + (-0.276407) => 4.5301517
   
-  This falls in line with glyhb_star values of records who have their frames equal to small, and shows that the fitted model might be better at predicting those who have smaller frames than those who don't.
+  This falls in line with glyhb_star values of records who have their frames equal to small,
+and shows that the fitted model might be better at predicting those who have smaller frames
+than those who don't.
   
-18. Question 17 was a perfect example of showing the differences between predictions and inferences. Above, we predicted the glyhb_star values of a person with the following values, stab.glu = 90, age = 35, waist = 30, ratio = 5.1, and frame = small. Based on our model, we predicted that this particular person would have a glyhb_star value of 4.5301517. The lines that we wrote underneath our predicted value of glyhb_star was information that we inferred based on the prediction, which goes to show the difference between predictions and inferences. 
-  
-  
+18. Question 17 was a perfect example of showing the differences between predictions and
+inferences. Above, we predicted the glyhb_star values of a person with the following values,
+stab.glu = 90, age = 35, waist = 30, ratio = 5.1, and frame = small. Based on our model, we
+predicted that this particular person would have a glyhb_star value of 4.5301517. The lines
+that we wrote underneath our predicted value of glyhb_star was information that we inferred
+based on the prediction, which goes to show the difference between predictions and inferences.
+
+19. The advantages of Linear Regressions are that they're simple to use/apply and read but a K
+Nearest Neighbors model will usually show you more true and accurate predictions/trends
+because it looks for the closest values at each of the X's and Y's intervals. This is
+especially true with data that doesn't have a perfect positive correlation. 
+
+## Reflection
+
+20. Our views of how important and applicable data science is has not changed but we do
+believe we have a broader knowlege of how applicable it is. We now know that data scientist
+use the exploration of structured and unstructured data to make inferences and predictive
+models to predict new data aka new observations. 
+
+1- The most surprising thing we find about data science is the wide range of uses such as
+predictive models, AI, data visualization, etc. The many uses creating knowledge has is
+infinite. 
+
+2- The most challenging thing we find about data science is trying to translate what you're
+trying to do to the syntax of the programs you're using as well as some of the more conceptual
+terms that you need to know going into it (i.e. y-hat, summary statistics, etc).
+
+3- The most interesting thing we find with using data science is that the uses are kind of
+endless because now in day-to-day life and can think about predicting future values of
+something if I can collect past instances. Data Science techniques can be applicable in many
+different subject areas which makes it fun to be contantly learning something new. Also it
+feels good when everything runs and works hahaha. 
 
 
 
